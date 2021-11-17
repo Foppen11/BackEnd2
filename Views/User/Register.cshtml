@@ -1,0 +1,23 @@
+﻿@model Inlamning2.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-action="VerifyRegister">
+    <input required="required" type="text" id="firstName" name="firstName" placeholder="First name">
+    <input required="required" type="text" id="lastName" name="lastName" placeholder="Last name">
+    <input required="required" type="text" id="email" name="email" placeholder="email">
+    <input required="required" type="text" id="password" name="password" placeholder="password">
+    <input required="required" type="submit" value="Register">
+</form>
+<p>
+    <a asp-controller="User" asp-action="Login">Already a member, Log in</a>
+</p>
+
+@if (TempData["Message"] != null)
+{
+    <span style="color:red;">@TempData["Message"].ToString()</span>
+}

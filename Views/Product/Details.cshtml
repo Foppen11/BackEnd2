@@ -1,0 +1,26 @@
+﻿@model Inlamning2.Models.Product
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="details">
+    <img src="@Html.DisplayFor(model => model.Image)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+        <p class="card-text">@Html.DisplayFor(model => model.LongDescription)</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="text-danger price pt-2">@Html.DisplayFor(model => model.Price) SEK</h4>
+            <form asp-action="AddToCartList" asp-controller="Cart">
+                <div class="form-group d-none">
+                    <input asp-for="Id" class="form-control" placeholder="@Html.DisplayFor(model => model.Id)"/>
+                    <input asp-for="Price" class="form-control" placeholder="@Html.DisplayFor(model => model.Price)" />
+                </div>
+                <input type="submit" value="Add to cart" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

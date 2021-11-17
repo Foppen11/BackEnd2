@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Inlamning2.Models.OrderLine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h4>Items in cart</h4>
+    <hr />
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ProductId)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => item.ProductId)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => item.Quantity)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => item.UnitPrice)
+            </div>
+            <hr />
+        }
+    </div>
+    <form asp-controller="Order" asp-action="CreateOrder" >
+        <input type="submit" value="Buy items in cart" class="btn btn-primary"/>
+    </form>
+
+
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

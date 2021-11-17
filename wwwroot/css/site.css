@@ -1,0 +1,36 @@
+﻿.card {
+    box-shadow: 0 0 6px 0px rgba(0,0,0,0.2);
+    transition: box-shadow 0.1s ease-in-out;
+    text-decoration: none;
+}
+.card h5{
+    color: black;
+}
+.card p{
+    color: #757575;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 6px 1px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 0.5rem;
+}
+.details {
+    width: 60%;
+    margin: auto;
+    min-height: 80vh;
+}
+
+.details img{
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 2rem;
+}
